@@ -8,6 +8,7 @@ import ru.gb.SpringData.models.TaskStatus;
 import ru.gb.SpringData.services.TaskServiceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Класс контроллера задач
@@ -30,6 +31,16 @@ public class TaskController {
     public List<Task> getAllTasks(){
         log.info("Run TaskController.getAllTasks");
         return taskService.getAllTasks();
+    }
+
+    /**
+     * Метод получения задачи по её ID
+     * @param id ID задачи для поиска
+     * @return Возвращает искомую задачу
+     */
+    @GetMapping("/{id}")
+    public Optional<Task> getTaskById(@PathVariable Long id){
+        return taskService.getTaskById(id);
     }
 
     /**

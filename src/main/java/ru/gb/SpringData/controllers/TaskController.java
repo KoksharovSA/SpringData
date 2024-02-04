@@ -40,6 +40,7 @@ public class TaskController {
      */
     @GetMapping("/{id}")
     public Optional<Task> getTaskById(@PathVariable Long id){
+        log.info("Run TaskController.getTaskById");
         return taskService.getTaskById(id);
     }
 

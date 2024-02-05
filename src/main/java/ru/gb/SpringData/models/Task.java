@@ -31,6 +31,7 @@ public class Task {
      * Статус задачи из перечисления TaskStatus
      */
     @Column(nullable = false)
+    @Enumeraed(EnumType.STRING)
     private TaskStatus status;
 
     /**
